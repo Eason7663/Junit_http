@@ -9,12 +9,13 @@ import org.junit.Test;
 
 import com.sun.xml.internal.ws.api.message.saaj.SaajStaxWriter;
 
+import blackHorseUtil.UserToken;
 import net.sf.json.JSONObject;
 
 public class RecommendTest {
 	private String userName = null;
+	private String userToken = null;
 	
-
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -23,9 +24,26 @@ public class RecommendTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public String getUserToken() {
+		return userToken;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setUserToken(String userToken) {
+		this.userToken = userToken;
+	}
+
 	@Before
 	public void setUp() throws Exception {
-		
+		setUserName("ycltest003");
+		setUserToken(UserToken.getUserToken(getUserName()));
 	}
 
 	@Test
