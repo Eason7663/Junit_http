@@ -48,17 +48,17 @@ public class ExcelOperator {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
-
+			
 		}
 		// TODO Auto-generated constructor stub
 	}
 	public ArrayList<String> getParam(String sheetName) {
 		ArrayList<String> paramList = new ArrayList<String>();
 		sheet = wb.getSheet(sheetName);
-		row = sheet.getRow(1);
+		row = sheet.getRow(0);
 		System.out.println(sheet.getPhysicalNumberOfRows());
-		paramList.add(row.getCell(0).getStringCellValue());
-
+		paramList.add(row.getCell(1).getStringCellValue());
+		System.out.println(paramList.toString());
 		return paramList;
 	}
 
