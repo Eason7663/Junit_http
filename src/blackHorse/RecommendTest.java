@@ -7,6 +7,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.sun.xml.internal.ws.api.message.saaj.SaajStaxWriter;
+
 import net.sf.json.JSONObject;
 
 public class RecommendTest {
@@ -32,17 +34,19 @@ public class RecommendTest {
 				"usertoken=H52DYemO7bAUtbE9DBWfostrSDtH*nR1VQmv-*F8P5A.1496749135&pool=多周期共振策略&token=00000002:2359591317:debdf92aca398eb500e85819cd560ae4a9249d47");
 		JSONObject ss = JSONObject.fromObject(s);
 
+		System.out.println(ss.get(ss));
+
 		
 		
 //        //发送 POST 请求z
 //        String sr=HttpRequest.sendPost("https://hao.360.cn", "key=123&v=456");
 //        System.out.println(sr);
 	}
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
+//	@Test
+//	public void test() {
+//		fail("Not yet implemented");
+//	}
+//	
 	
 
 }

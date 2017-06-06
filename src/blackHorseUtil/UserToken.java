@@ -1,7 +1,8 @@
-package blackHorse;
+package blackHorseUtil;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
+import blackHorse.HttpRequest;
 import net.sf.json.JSONObject;
 import netscape.javascript.JSObject;
 
