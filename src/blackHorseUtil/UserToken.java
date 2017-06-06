@@ -20,7 +20,6 @@ public class UserToken {
 		stringBuilder.append(userName);
 		JSONObject jsObject = JSONObject.fromObject(HttpRequest.sendGet("http://10.15.107.167/gettoken",stringBuilder.toString())) ;
 		
-		
 		return (String) jsObject.get("token");
 	}
 
