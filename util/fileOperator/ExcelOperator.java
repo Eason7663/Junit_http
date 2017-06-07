@@ -26,10 +26,8 @@ import sun.nio.cs.ext.DoubleByte.Encoder_EBCDIC;
 public class ExcelOperator {
 	private POIFSFileSystem fs;
     private XSSFWorkbook wb;
-    private XSSFSheet sheet;
-    private XSSFRow row;
-
 	private Integer numberOfSheets = 0;
+	
 	public ExcelOperator(String fileName) {
 		try {
 			FileInputStream inputStream = new FileInputStream(fileName);
@@ -52,14 +50,33 @@ public class ExcelOperator {
 		}
 		// TODO Auto-generated constructor stub
 	}
-	public ArrayList<String> getParam(String sheetName) {
+
+	/**
+	 * @param sheetName 参数所在sheet表名
+	 * @param strKey 想要获取的参数名
+	 * @return
+	 * @throws Exception 如果获取不到指定参数，则抛出异常
+	 */
+	public ArrayList<String> getParam(String sheetName,String strKey) throws Exception {
 		ArrayList<String> paramList = new ArrayList<String>();
-		sheet = wb.getSheet(sheetName);
-		row = sheet.getRow(15);
-		System.out.println(sheet.getPhysicalNumberOfRows());
-		paramList.add(row.getCell(0).getStringCellValue());
-		System.out.println(paramList.toString());
-		return paramList;
+	    XSSFSheet sheet = wb.getSheet(sheetName);
+	    XSSFRow row = null;
+	    for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+			row = sheet.getRow(i);
+			if (row.getCell(0).getStringCellValue().equals(strKey)) {
+				for (int j = 1; j < row.getPhysicalNumberOfCells(); j++) {
+					paramList.add(row.getCell(j).getStringCellValue());
+				}
+				return paramList;
+			}
+		}
+		
+	    
+//		System.out.println(sheet.getPhysicalNumberOfRows());
+//		paramList.add(row.getCell(0).getStringCellValue());
+//		System.out.println(paramList.toString());
+	    Exception exception = new Exception("没有找到指定的key");
+		throw exception;
 	}
 
 	public Integer getNumberOfSheets() {
@@ -72,7 +89,13 @@ public class ExcelOperator {
 		// TODO Auto-generated method stub
 		ExcelOperator excelOperator = new ExcelOperator(".\\dat\\test case.xlsx");
 		System.out.println(excelOperator.getNumberOfSheets());
-		excelOperator.getParam("parameters");
+		try {
+			System.out.println(excelOperator.getParam("parameters","prefer"));
+			System.out.println(excelOperator.getParam("parameters","poolname"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
