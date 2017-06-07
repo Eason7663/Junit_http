@@ -55,9 +55,9 @@ public class ExcelOperator {
 	public ArrayList<String> getParam(String sheetName) {
 		ArrayList<String> paramList = new ArrayList<String>();
 		sheet = wb.getSheet(sheetName);
-		row = sheet.getRow(0);
+		row = sheet.getRow(15);
 		System.out.println(sheet.getPhysicalNumberOfRows());
-		paramList.add(row.getCell(1).getStringCellValue());
+		paramList.add(row.getCell(0).getStringCellValue());
 		System.out.println(paramList.toString());
 		return paramList;
 	}
@@ -72,8 +72,8 @@ public class ExcelOperator {
 		// TODO Auto-generated method stub
 		ExcelOperator excelOperator = new ExcelOperator(".\\dat\\test case.xlsx");
 		System.out.println(excelOperator.getNumberOfSheets());
+		excelOperator.getParam("parameters");
 		
-		excelOperator.getParam("sheet2");
 	}
 
 }

@@ -27,7 +27,6 @@ public class RecommendTest {
 	public String getUserName() {
 		return userName;
 	}
-
 	public String getUserToken() {
 		return userToken;
 	}
