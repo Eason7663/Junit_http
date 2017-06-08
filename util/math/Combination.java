@@ -39,7 +39,8 @@ public class Combination{
     }  
     public static void main(String args[]){  
         String chs[]={"大盘","中盘","小盘","高市盈","中市盈","低市盈","大波动","中波动","低波动"};  
-        Set result = Combination.combination(chs);
+        Set result = new HashSet<>();
+        result = Combination.combination(chs);
         for (Iterator iterator = result.iterator(); iterator.hasNext();) {
 			Object object = (Object) iterator.next();
 			System.out.println(object.toString());
