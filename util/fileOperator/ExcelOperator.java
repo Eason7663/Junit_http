@@ -26,16 +26,13 @@ import sun.nio.cs.ext.DoubleByte.Encoder_EBCDIC;
 public class ExcelOperator {
 	private POIFSFileSystem fs;
     private XSSFWorkbook wb;
-	private Integer numberOfSheets = 0;
 	
 	public ExcelOperator(String fileName) {
 		try {
 			FileInputStream inputStream = new FileInputStream(fileName);
 //			fs = new POIFSFileSystem(inputStream);
 	        wb = new XSSFWorkbook(inputStream);
-//			inputStream.close();
-			numberOfSheets = wb.getNumberOfSheets();
-			
+			inputStream.close();		
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,6 +47,7 @@ public class ExcelOperator {
 		}
 		// TODO Auto-generated constructor stub
 	}
+
 
 	/**
 	 * @param sheetName 参数所在sheet表名
@@ -70,25 +68,14 @@ public class ExcelOperator {
 				return paramList;
 			}
 		}
-		
 	    
-//		System.out.println(sheet.getPhysicalNumberOfRows());
-//		paramList.add(row.getCell(0).getStringCellValue());
-//		System.out.println(paramList.toString());
 	    Exception exception = new Exception("没有找到指定的key");
 		throw exception;
 	}
 
-	public Integer getNumberOfSheets() {
-		return numberOfSheets;
-	}
-	public void setNumberOfSheets(Integer numberOfSheets) {
-		this.numberOfSheets = numberOfSheets;
-	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ExcelOperator excelOperator = new ExcelOperator(".\\dat\\test case.xlsx");
-		System.out.println(excelOperator.getNumberOfSheets());
 		try {
 			System.out.println(excelOperator.getParam("parameters","prefer"));
 			System.out.println(excelOperator.getParam("parameters","poolname"));

@@ -38,5 +38,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/poi/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/poi/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/GSON/gson-2.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
