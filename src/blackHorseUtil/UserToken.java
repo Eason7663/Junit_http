@@ -19,7 +19,6 @@ public class UserToken {
 		StringBuilder stringBuilder = new StringBuilder("appId=3&reqId=3-`uuidgen`&userIp=10.15.54.204&exp=3600&userId=");
 		stringBuilder.append(userName);
 		JSONObject jsObject = JSONObject.fromObject(HttpRequest.sendGet("http://10.15.107.167/gettoken",stringBuilder.toString())) ;
-		
 		return (String) jsObject.get("token");
 	}
 

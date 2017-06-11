@@ -5,12 +5,16 @@ package blackHorse;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
+import org.apache.log4j.Logger;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.experimental.theories.Theories;
 
 import com.sun.imageio.plugins.wbmp.WBMPImageReader;
 
@@ -21,16 +25,16 @@ import fileOperator.ExcelOperator;
  *
  */
 public class UserSetTest {
-	static ExcelOperator excelOperator = null;
-
+	private ExcelOperator excelOperator = null;
+	private ArrayList<String> paramArrayList;
+	private static Logger logger = Logger.getLogger(UserSetTest.class);
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		excelOperator = new ExcelOperator(".\\dat\\test case.xlsx");
-		
+
 	}
 
 	/**
@@ -45,6 +49,8 @@ public class UserSetTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
+		this.excelOperator = new ExcelOperator(".\\dat\\test case.xlsx");
+		this.paramArrayList.addAll(excelOperator.getParam("parameters", "prefer"));
 	}
 
 	/**
@@ -56,7 +62,9 @@ public class UserSetTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		while (!paramArrayList.isEmpty()) {
+			
+		}
 	}
 
 }

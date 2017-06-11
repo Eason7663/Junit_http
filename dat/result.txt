@@ -1,1 +1,131 @@
-Ôªø{"Qid":"","Err":0,"Counter":1,"Data":{"Id":353,"RepDataBlackHorseRecommend":[{"Permision":1,"Strategy":[{"Name":"ÊùøÂùóÁÉ≠ÁÇπËΩÆÂä®Á≠ñÁï•","IsNotice":1,"StockInfo":[{"StockCode":"SH600135","StockName":"‰πêÂáØËÉ∂Áâá","Time":"2017-06-07 09:40:32","Price":16.73,"Income":3.29,"IsFollow":0},{"StockCode":"SH600519","StockName":"Ë¥µÂ∑ûËåÖÂè∞","Time":"2017-06-06 14:01:15","Price":446.9,"Income":2.79,"IsFollow":1}]},{"Name":"Â§öÂë®ÊúüÂÖ±ÊåØÁ≠ñÁï•","IsNotice":0,"StockInfo":[{"StockCode":"SH600135","StockName":"‰πêÂáØËÉ∂Áâá","Time":"2017-06-07 09:50:14","Price":16.73,"Income":3.29,"IsFollow":1},{"StockCode":"SH600622","StockName":"ÂòâÂÆùÈõÜÂõ¢","Time":"2017-06-07 14:47:09","Price":20.44,"Income":0.88,"IsFollow":0},{"StockCode":"SH600000","StockName":"Êµ¶ÂèëÈì∂Ë°å","Time":"2017-06-07 13:46:03","Price":12.83,"Income":0.08,"IsFollow":0},{"StockCode":"SH600260","StockName":"ÂáØ‰πêÁßëÊäÄ","Time":"2017-06-06 14:52:17","Price":21.75,"Income":4.87,"IsFollow":1},{"StockCode":"SH600048","StockName":"‰øùÂà©Âú∞‰∫ß","Time":"2017-06-06 10:10:27","Price":9.84,"Income":0.2,"IsFollow":1},{"StockCode":"SZ300041","StockName":"ÂõûÂ§©Êñ∞Êùê","Time":"2017-06-06 10:09:26","Price":13.05,"Income":7.51,"IsFollow":0},{"StockCode":"SZ000089","StockName":"Ê∑±Âú≥Êú∫Âú∫","Time":"2017-06-06 10:08:22","Price":9.22,"Income":1.84,"IsFollow":0},{"StockCode":"SZ002836","StockName":"Êñ∞ÂÆèÊ≥Ω","Time":"2017-06-06 10:06:18","Price":40.23,"Income":6.84,"IsFollow":0},{"StockCode":"SZ002135","StockName":"‰∏úÂçóÁΩëÊû∂","Time":"2017-06-06 10:06:18","Price":8.47,"Income":1.42,"IsFollow":0},{"StockCode":"SZ000507","StockName":"Áè†Êµ∑Ê∏Ø","Time":"2017-06-06 10:06:17","Price":10.19,"Income":11.38,"IsFollow":0},{"StockCode":"SZ300433","StockName":"ËìùÊÄùÁßëÊäÄ","Time":"2017-06-05 14:14:45","Price":30.05,"Income":-0.8,"IsFollow":0}]}]}]}}
+{
+    "Qid": "",
+    "Err": 0,
+    "Counter": 1,
+    "Data": {
+        "Id": 353,
+        "RepDataBlackHorseRecommend": [
+            {
+                "Permision": 1,
+                "Strategy": [
+                    {
+                        "Name": "∞ÂøÈ»»µ„¬÷∂Ø≤ﬂ¬‘",
+                        "IsNotice": 1,
+                        "StockInfo": [
+                            {
+                                "StockCode": "SH600135",
+                                "StockName": "¿÷ø≠Ω∫∆¨",
+                                "Time": "2017-06-07 09:40:32",
+                                "Price": 16.73,
+                                "Income": 3.29,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SH600519",
+                                "StockName": "πÛ÷›√©Ã®",
+                                "Time": "2017-06-06 14:01:15",
+                                "Price": 446.9,
+                                "Income": 2.79,
+                                "IsFollow": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "∂‡÷‹∆⁄π≤’Ò≤ﬂ¬‘",
+                        "IsNotice": 0,
+                        "StockInfo": [
+                            {
+                                "StockCode": "SH600135",
+                                "StockName": "¿÷ø≠Ω∫∆¨",
+                                "Time": "2017-06-07 09:50:14",
+                                "Price": 16.73,
+                                "Income": 3.29,
+                                "IsFollow": 1
+                            },
+                            {
+                                "StockCode": "SH600622",
+                                "StockName": "ºŒ±¶ºØÕ≈",
+                                "Time": "2017-06-07 14:47:09",
+                                "Price": 20.44,
+                                "Income": 0.88,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SH600000",
+                                "StockName": "∆÷∑¢“¯––",
+                                "Time": "2017-06-07 13:46:03",
+                                "Price": 12.83,
+                                "Income": 0.08,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SH600260",
+                                "StockName": "ø≠¿÷ø∆ºº",
+                                "Time": "2017-06-06 14:52:17",
+                                "Price": 21.75,
+                                "Income": 4.87,
+                                "IsFollow": 1
+                            },
+                            {
+                                "StockCode": "SH600048",
+                                "StockName": "±£¿˚µÿ≤˙",
+                                "Time": "2017-06-06 10:10:27",
+                                "Price": 9.84,
+                                "Income": 0.2,
+                                "IsFollow": 1
+                            },
+                            {
+                                "StockCode": "SZ300041",
+                                "StockName": "ªÿÃÏ–¬≤ƒ",
+                                "Time": "2017-06-06 10:09:26",
+                                "Price": 13.05,
+                                "Income": 7.51,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SZ000089",
+                                "StockName": "…Ó€⁄ª˙≥°",
+                                "Time": "2017-06-06 10:08:22",
+                                "Price": 9.22,
+                                "Income": 1.84,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SZ002836",
+                                "StockName": "–¬∫Í‘Û",
+                                "Time": "2017-06-06 10:06:18",
+                                "Price": 40.23,
+                                "Income": 6.84,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SZ002135",
+                                "StockName": "∂´ƒœÕ¯º‹",
+                                "Time": "2017-06-06 10:06:18",
+                                "Price": 8.47,
+                                "Income": 1.42,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SZ000507",
+                                "StockName": "÷È∫£∏€",
+                                "Time": "2017-06-06 10:06:17",
+                                "Price": 10.19,
+                                "Income": 11.38,
+                                "IsFollow": 0
+                            },
+                            {
+                                "StockCode": "SZ300433",
+                                "StockName": "¿∂Àºø∆ºº",
+                                "Time": "2017-06-05 14:14:45",
+                                "Price": 30.05,
+                                "Income": -0.8,
+                                "IsFollow": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

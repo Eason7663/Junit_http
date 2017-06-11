@@ -9,6 +9,8 @@ import fileOperator.ExcelOperator;
 import math.Combination;
 
 public class CreateCaseExcel {
+	
+	
 	private ArrayList<String> paramList = new ArrayList<>();
 	
 	public static void main(String[] args) {
@@ -19,8 +21,12 @@ public class CreateCaseExcel {
 			ArrayList<String> list = excelOperator.getParam("parameters","prefer");
 			String chs[] = new String[list.size()];
 			List<String> result = new ArrayList<>(); 
-			result = Combination.combination(excelOperator.getParam("parameters","poolname").toArray(chs));
-			System.out.println(result.get(1).toString());
+			result = Combination.combination(excelOperator.getParam("parameters","prefer").toArray(chs));
+			for (String string : result) {
+				string = (String) string.subSequence(1, string.length()-1);
+				System.out.println(string);
+			}
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
