@@ -15,7 +15,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+import org.junit.experimental.theories.Theory;
 
 import blackHorseUtil.UserToken;
 import fileOperator.ExcelOperator;
@@ -167,8 +167,8 @@ public class UserSetTest {
 			}
 		}
 	}
-	
-	@Test
+	@Theory
+	@Test(expected=IllegalArgumentException.class)
 	public void getTest(){
 		String strURL = HttpRequest.makeURL(getUserSetHost(),UserSetTest.Prop.getProperty("preferGetPath"));
 		String strContent = UserSetTest.makeContent(getUsertoken(), getToken(), Prop.getProperty("pool"));
