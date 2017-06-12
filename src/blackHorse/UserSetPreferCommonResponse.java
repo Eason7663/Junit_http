@@ -1,7 +1,5 @@
 package blackHorse;
 
-import blackHorse.UserSetPreferGetResponse.Data;
-
 public class UserSetPreferCommonResponse {
 	private String Qid;
 	private Integer Err;
