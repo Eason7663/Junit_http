@@ -15,12 +15,11 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.internal.runners.statements.Fail;
+
 
 import blackHorseUtil.UserToken;
 import fileOperator.ExcelOperator;
 import fileOperator.GsonUtil;
-import net.sf.json.JSONObject;
 import requestUtils.HttpRequest;
 
 /**
@@ -175,21 +174,18 @@ public class UserSetTest {
 		String strContent = UserSetTest.makeContent(getUsertoken(), getToken(), Prop.getProperty("pool"));
 		String strResponse = HttpRequest.sendGet(strURL, strContent);
 		
-		JSONObject jsonObject = JSONObject.fromObject(strResponse);
-		
-		
 		UserSetPreferGetResponse userSetPreferGetResponse = GsonUtil.parseJsonWithGson(strResponse, UserSetPreferGetResponse.class);
 		if (userSetPreferGetResponse == null) {
 			logger.error("请求结果为空!");
-			fail("获取股票偏好接口测试用例已执行，failed!");
+			fail("获取股票偏好接口用例已执行，failed!");
 		}else{
 			if (userSetPreferGetResponse.getErr() == -1) {
-				logger.error("获取股票偏好接口测试用例已执行，fail!");
+				logger.error("获取股票偏好接口用例已执行，fail!");
 				logger.error(userSetPreferGetResponse.getData());
 				fail("偏好接口请求返回失败!");
 			}else{
 				assertSame("获取失败", 0, userSetPreferGetResponse.getErr());
-				logger.info("获取股票偏好接口测试用例已执行，pass!");
+				logger.info("获取股票偏好接口用例已执行，pass!");
 			}
 		}
 	}
