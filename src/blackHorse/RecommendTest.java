@@ -19,6 +19,7 @@ import com.sun.xml.internal.ws.api.message.saaj.SaajStaxWriter;
 import blackHorseUtil.UserToken;
 import fileOperator.FileUtils;
 import fileOperator.GsonUtil;
+import requestUtils.HttpRequest;
 
 public class RecommendTest {
 	
@@ -111,13 +112,6 @@ public class RecommendTest {
 	public void setRequestContent(String requestContent) {
 		this.requestContent = requestContent;
 	}
-
-	public String makeURL() {
-		StringBuilder strURL = new StringBuilder();
-		strURL.append(recommendHost);
-		strURL.append(recommendPath);
-		return strURL.toString();
-	}
 	
 	public String makeContent() {
 		StringBuilder strContent = new StringBuilder();
@@ -132,29 +126,24 @@ public class RecommendTest {
 
 	@Before
 	public void setUp() throws Exception {
-//		setUserToken(UserToken.getUserToken(getUserName()));
-//		setRecommendURL(makeURL());
-//		setRequestContent(makeContent());
+		setUserToken(UserToken.getUserToken(getUserName()));
+		setRecommendURL(HttpRequest.makeURL(recommendHost,recommendPath));
+		setRequestContent(makeContent());
 	}
 
 	@Test
 	public void recommendBaseTest() {
-//		String strResponse = HttpRequest.sendGet(getRecommendURL(),getRequestContent());
-		String strResponse;
-		try {
-			strResponse = FileUtils.readFile("dat\\result.txt");
-			BlackHorseRecommendResponse blackHorseRecommendResponse = 
-					GsonUtil.parseJsonWithGson(strResponse, BlackHorseRecommendResponse.class);
-			if (blackHorseRecommendResponse == null) {
-				logger.error("json初始化失败！");
-			}
-			assertSame("查询失败", 0, blackHorseRecommendResponse.getErr());
-			logger.info("recommend查询接口测试用例执行，pass！");
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String strResponse = HttpRequest.sendGet(getRecommendURL(),getRequestContent());
+//		String strResponse;
+//			strResponse = FileUtils.readFile("dat\\result.txt");
+		BlackHorseRecommendResponse blackHorseRecommendResponse = 
+				GsonUtil.parseJsonWithGson(strResponse, BlackHorseRecommendResponse.class);
+		if (blackHorseRecommendResponse == null) {
+			logger.error("请求未响应！");
+			return;
 		}
+		assertSame("查询失败", 0, blackHorseRecommendResponse.getErr());
+		logger.info("recommend查询接口测试用例已执行，pass！");
 		
 	}
 	

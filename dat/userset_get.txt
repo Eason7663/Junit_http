@@ -1,0 +1,16 @@
+{
+Qid: "",
+Err: 0,
+Counter: 1,
+Data: {
+Id: 356,
+RepDataPoolUserStockInfo: [
+{
+Stock: "SH600048"
+},
+{
+Stock: "SH600135"
+}
+]
+}
+}
