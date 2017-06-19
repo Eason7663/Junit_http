@@ -7,6 +7,8 @@ import static org.junit.Assert.*;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
@@ -15,109 +17,94 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.experimental.theories.Theory;
+import org.junit.experimental.theories.Theories;
 
+import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
+import blackHorse.RecommendResponse.Data.RepDataBlackHorseRecommend.Strategy;
+import blackHorse.RecommendResponse.Data.RepDataBlackHorseRecommend.Strategy.StockInfo;
 import blackHorseUtil.UserToken;
 import fileOperator.ExcelOperator;
 import fileOperator.GsonUtil;
+import net.sf.json.JSONObject;
 import requestUtils.HttpRequest;
 
 /**
- * @author Administrator
- *
+ * @Description TODO
+ * @author Eason
+ * 
+ */
+/**
+ * @Description TODO
+ * @author Eason
+ * 
  */
 public class UserSetTest {
 	private static Logger logger = Logger.getLogger(UserSetTest.class);
-	private static Properties Prop = new Properties();
+	private static Properties prop = new Properties();
 	
-	private ExcelOperator excelOperator = null;
-	private ArrayList<String> paramArrayList;
-	private String userName;
-	private String userSetHost; //Ò»°ãÎªuaµØÖ·
-	private String usertoken;
-	private String token;
-	private String prefer;
-	private String pool;
-	private String stock;
+	private UserSetRequsetURL userSetRequsetURL;
 	
-	
-	public String getUserName() {
-		return userName;
-	}
 
-	public String getUserSetHost() {
-		return userSetHost;
-	}
-
-	public String getUsertoken() {
-		return usertoken;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public String getPrefer() {
-		return prefer;
-	}
-
-	public String getPool() {
-		return pool;
-	}
-
-	public String getStock() {
-		return stock;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public void setUserSetHost(String userSetHost) {
-		this.userSetHost = userSetHost;
-	}
-
-	public void setUsertoken(String usertoken) {
-		this.usertoken = usertoken;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
-	public void setPrefer(String prefer) {
-		this.prefer = prefer;
-	}
-
-	public void setPool(String pool) {
-		this.pool = pool;
-	}
-
-	public void setStock(String stock) {
-		this.stock = stock;
-	}
-
-	public static String makeContent(String Usertoken, String token, String pool, String... strPrefer) {
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("usertoken=");
-		stringBuilder.append(Usertoken);
-		stringBuilder.append("&token=");
-		stringBuilder.append(token);
-		stringBuilder.append("&pool=");
-		stringBuilder.append(pool);
-		if (strPrefer!= null) {
-			stringBuilder.append("&prefer=");
-			stringBuilder.append(strPrefer);
+	/**
+	 * @Description TODO
+	 * @param logger
+	 * @param strCaseName
+	 * @param strResponse
+	 * @return_type void
+	 * @author Eason
+	 * @date 2017å¹´6æœˆ19æ—¥ ä¸Šåˆ9:18:23  
+	 */
+	public void logInfo(Logger logger, String strCaseName, String strResponse) {
+		if (JSONObject.fromObject(strResponse).get("Err").equals(0)) {
+			assertEquals("è¿”å›ç ä¸ç­‰äº0", 0, JSONObject.fromObject(strResponse).get("Err"));
+//			logger.info(strResponse);
+			logger.info(strCaseName + "æµ‹è¯•ç”¨ä¾‹å·²æ‰§è¡Œï¼Œæ‰§è¡Œç»“æœpass!");
+		}else{
+			UserSetPreferCommonResponse userSetPreferCommonResponse = GsonUtil.parseJsonWithGson(strResponse, 
+					UserSetPreferCommonResponse.class);
+//			logger.info(strResponse);
+			logger.info(strCaseName + "æµ‹è¯•ç”¨ä¾‹å·²æ‰§è¡Œï¼Œæ‰§è¡Œç»“æœfail!" + " é”™è¯¯æè¿°ï¼š" +
+					userSetPreferCommonResponse.getData().getDesc());
+			fail("-1");
 		}
-		return stringBuilder.toString();
 	}
-
+	
+	
+	public Strategy getRecommendStockCode(UserSetRequsetURL userSetRequsetURL) {
+		userSetRequsetURL.setStrPath("/dzh/blackhorse/recommend");
+		
+		Strategy strategy = new RecommendResponse().new Data().new RepDataBlackHorseRecommend().new Strategy();
+		String  strResponse = HttpRequest.sendGet(userSetRequsetURL.toString()); //
+		RecommendResponse recommendResponse = GsonUtil.parseJsonWithGson(strResponse, RecommendResponse.class);
+		for (Strategy iterable_element : recommendResponse.getData().getRepDataBlackHorseRecommend().get(0).getStrategy()) {
+			System.out.println(iterable_element.getName());
+			strategy.setName(iterable_element.getName());
+			if (!iterable_element.getStockInfo().isEmpty()) {
+				for (StockInfo stockInfoElement : iterable_element.getStockInfo()) {
+					if (stockInfoElement.getIsFollow() == 1) {
+						break;
+					}else{
+						List<StockInfo> list = new ArrayList<StockInfo>();
+						list.add(stockInfoElement);
+						strategy.setStockInfo(list);
+						return strategy;
+					}
+				}
+				
+			}
+		}
+			
+		return strategy;
+	}
+	
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		Prop.load(new FileReader("dat\\userset.properties"));
+		prop.load(new FileReader("dat\\userset.properties"));
 	}
 
 	/**
@@ -132,13 +119,14 @@ public class UserSetTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		setUserName(Prop.getProperty("username"));
-		setUsertoken(UserToken.getUserToken(getUserName()));
-//		this.excelOperator = new ExcelOperator(".\\dat\\test case.xlsx");
-//		this.paramArrayList.addAll(excelOperator.getParam("parameters", "prefer"));
-		setUserSetHost(Prop.getProperty("host"));
-		setToken(Prop.getProperty("token"));
-		setPool(Prop.getProperty("pool"));
+		userSetRequsetURL = new UserSetRequsetURL(prop.getProperty("host"), 
+				null, 
+				prop.getProperty("token"),
+				prop.getProperty("userName"),
+				prop.getProperty("pool"),
+				null,
+				null
+				);
 	}
 
 	/**
@@ -146,48 +134,76 @@ public class UserSetTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		userSetRequsetURL.setStrPath(null);
+		userSetRequsetURL.setPrefer(null);
+		userSetRequsetURL.setStock(null);
 	}
 
+
+	/**
+	 * @Description åå¥½è®¾ç½®ç”¨ä¾‹
+	 * @return_type void
+	 * @author Eason
+	 * @date 2017å¹´6æœˆ19æ—¥ ä¸Šåˆ9:23:48  
+	 */
 	@Test
-	public void addTest() {
-		String strURL = HttpRequest.makeURL(getUserSetHost(),UserSetTest.Prop.getProperty("preferAddPath"));
-		String strContent = UserSetTest.makeContent(getUsertoken(), getToken(), Prop.getProperty("pool"),Prop.getProperty("prefer"));
-		String strResponse = HttpRequest.sendGet(strURL, strContent);
-		UserSetPreferCommonResponse commonResponse = GsonUtil.parseJsonWithGson(strResponse, UserSetPreferCommonResponse.class);
-		if (commonResponse == null) {
-			logger.error("ÇëÇó½á¹ûÎª¿Õ!");
-		}else{
-			if (commonResponse.getErr() == -1) {
-				logger.error("ÉèÖÃ¹ÉÆ±Æ«ºÃ½Ó¿Ú²âÊÔÓÃÀıÒÑÖ´ĞĞ£¬fail!");
-				logger.error(commonResponse.getData().getDesc());
-				fail("Æ«ºÃ½Ó¿ÚÇëÇó·µ»ØÊ§°Ü!");
-			}else{
-				assertSame("ÉèÖÃÊ§°Ü", 0, commonResponse.getErr());
-				logger.info("ÉèÖÃ¹ÉÆ±Æ«ºÃ½Ó¿Ú²âÊÔÓÃÀıÒÑÖ´ĞĞ£¬pass!");
-			}
-		}
-	}
-	@Theory
-	@Test(expected=IllegalArgumentException.class)
-	public void getTest(){
-		String strURL = HttpRequest.makeURL(getUserSetHost(),UserSetTest.Prop.getProperty("preferGetPath"));
-		String strContent = UserSetTest.makeContent(getUsertoken(), getToken(), Prop.getProperty("pool"));
-		String strResponse = HttpRequest.sendGet(strURL, strContent);
+	public void testPreferAdd() { 
+		userSetRequsetURL.setStrPath(prop.getProperty("preferAddPath"));
+		String  strResponse = HttpRequest.sendGet(userSetRequsetURL.preferUrl(prop.getProperty("preferAdd")));
+		logger.info("å‘é€è¯·æ±‚" + userSetRequsetURL.preferUrl(prop.getProperty("preferAdd")));
 		
-		UserSetPreferGetResponse userSetPreferGetResponse = GsonUtil.parseJsonWithGson(strResponse, UserSetPreferGetResponse.class);
-		if (userSetPreferGetResponse == null) {
-			logger.error("ÇëÇó½á¹ûÎª¿Õ!");
-			fail("»ñÈ¡¹ÉÆ±Æ«ºÃ½Ó¿ÚÓÃÀıÒÑÖ´ĞĞ£¬failed!");
-		}else{
-			if (userSetPreferGetResponse.getErr() == -1) {
-				logger.error("»ñÈ¡¹ÉÆ±Æ«ºÃ½Ó¿ÚÓÃÀıÒÑÖ´ĞĞ£¬fail!");
-				logger.error(userSetPreferGetResponse.getData());
-				fail("Æ«ºÃ½Ó¿ÚÇëÇó·µ»ØÊ§°Ü!");
-			}else{
-				assertSame("»ñÈ¡Ê§°Ü", 0, userSetPreferGetResponse.getErr());
-				logger.info("»ñÈ¡¹ÉÆ±Æ«ºÃ½Ó¿ÚÓÃÀıÒÑÖ´ĞĞ£¬pass!");
-			}
-		}
+		logInfo(logger, "åå¥½è®¾ç½®", strResponse);
+	}
+	
+	/**
+	 * @Description TODO
+	 * @return_type void
+	 * @author Eason
+	 * @date 2017å¹´6æœˆ19æ—¥ ä¸Šåˆ9:24:10  
+	 */
+	@Test
+	public void testPreferGet(){
+		userSetRequsetURL.setStrPath(prop.getProperty("preferGetPath"));
+		String strResponse = HttpRequest.sendGet(userSetRequsetURL.toString());	
+		logger.info("å‘é€è¯·æ±‚" + userSetRequsetURL.toString());
+		
+		logInfo(logger, "åå¥½è·å–", strResponse);
+	}
+	
+
+	/**
+	 * @Description TODO
+	 * @return_type void
+	 * @author Eason
+	 * @date 2017å¹´6æœˆ19æ—¥ ä¸Šåˆ9:24:41  
+	 */
+	@Test
+	public void testPreferDelete(){
+		userSetRequsetURL.setStrPath(prop.getProperty("preferDelPath"));
+		String  strResponse = HttpRequest.sendGet(userSetRequsetURL.preferUrl(prop.getProperty("preferDel")));
+		logger.info("å‘é€è¯·æ±‚" + userSetRequsetURL.preferUrl(prop.getProperty("preferDel")));
+		
+		logInfo(logger, "åå¥½åˆ é™¤", strResponse);
 	}
 
+	/**
+	 * @Description TODO
+	 * @return_type void
+	 * @author Eason
+	 * @date 2017å¹´6æœˆ19æ—¥ ä¸Šåˆ9:25:13  
+	 */
+	@Test
+	public void testStockAdd(){
+		
+		Strategy strategy = getRecommendStockCode(userSetRequsetURL);
+//		System.out.println(result.toString());
+		userSetRequsetURL.setStrPath(prop.getProperty("preferGetPath"));
+		userSetRequsetURL.setPool(strategy.getName());
+		userSetRequsetURL.setStock(strategy.getStockInfo().get(0).getStockCode());
+		String  strResponse = HttpRequest.sendGet(userSetRequsetURL.stockUrl());
+		logger.info("å‘é€è¯·æ±‚" + userSetRequsetURL.stockUrl());
+
+		logInfo(logger, "è‚¡ç¥¨è·Ÿè¸ª", strResponse);
+	}
+	
 }

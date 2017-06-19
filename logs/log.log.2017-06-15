@@ -1,0 +1,44 @@
+2017-06-15 15:46:37  [ main:0 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:04:09  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/addusertoken=-qZfOL*zrYb9GDf-UL-T3KfBNqOa5A67Teb9Var3ilc.1497518787&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=[Ljava.lang.String;@1888ff2c
+2017-06-15 16:04:09  [ main:72 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:04:24  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/addusertoken=KwFd84PFfMGGIsKzmQlUrJaYHkeLxfaD54qobGehASU.1497518801&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=[Ljava.lang.String;@1888ff2c
+2017-06-15 16:04:42  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/addusertoken=99rTr0Zc1AVybRfDoXXoRuLPrJHs8GnJmouygo-5nhg.1497518819&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=[Ljava.lang.String;@1888ff2c
+2017-06-15 16:04:42  [ main:85 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:10:22  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=uZZoUPc-LCqWeTWrGx6kCi9RIKo1Zv3S3HM7IEIRZNo.1497519160&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=[Ljava.lang.String;@1888ff2c
+2017-06-15 16:10:22  [ main:79 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:11:16  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=ZvQTAAgggPonuT5fwWdMpWtc3*ivaH3ZwI*HAPvrVxg.1497519213&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=[Ljava.lang.String;@56a6d5a6
+2017-06-15 16:16:11  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=Gb7SDiKrsbYUOzT8fbtgIeLPrJHs8GnJmouygo-5nhg.1497519509&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=[Ljava.lang.String;@1888ff2c
+2017-06-15 16:16:12  [ main:313 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:16:54  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=LG1kD9Uu4cDY4UKpeYynT5aYHkeLxfaD54qobGehASU.1497519551&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:16:54  [ main:104 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:24:32  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=nWcNDRl70U7o2XHFeY0x2y9RIKo1Zv3S3HM7IEIRZNo.1497520010&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:24:32  [ main:10 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:24:46  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=qFHJao8039ddMSqVCC*-m9ncIMuLzWB*rR2FxXMWpE8.1497520024&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:24:46  [ main:9 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:25:20  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=iDihM19HoYsicI0XhSTQg7JqGl2ufKeKya0WCYYIK0g.1497520058&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:25:20  [ main:11 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:29:21  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=RzAMyCmpPCr-Y84m*Eui-7JqGl2ufKeKya0WCYYIK0g.1497520298&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:29:21  [ main:7 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:30:16  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=bK7UXjEkRLKUtkXTnwnFmtncIMuLzWB*rR2FxXMWpE8.1497520354&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:30:16  [ main:7 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:36:26  [ main:1 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:36:26  [ main:8 ] - [ INFO ]  设置股票偏好接口测试用例已执行，pass!
+2017-06-15 16:39:17  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=JK-0qwuWLzM-jalTz0HGM9ncIMuLzWB*rR2FxXMWpE8.1497520894&token=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:39:17  [ main:84 ] - [ INFO ]  设置股票偏好接口测试用例已执行，fail!错误原因：Token invalid or no longer valid
+2017-06-15 16:40:01  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:40:01  [ main:78 ] - [ INFO ]  设置股票偏好接口测试用例已执行，fail!错误原因：Token invalid or no longer valid
+2017-06-15 16:40:23  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:40:23  [ main:66 ] - [ INFO ]  设置股票偏好接口测试用例已执行，fail!错误原因：Internal service access error unreport
+2017-06-15 16:41:32  [ main:1 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:41:42  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:41:50  [ main:1 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:42:00  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 16:42:00  [ main:81 ] - [ INFO ]  设置股票偏好接口测试用例已执行，fail!错误原因：Internal service access error unreport
+2017-06-15 17:02:32  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 17:02:32  [ main:102 ] - [ INFO ]  设置股票偏好接口测试用例已执行，fail!错误原因：Internal service access error unreport
+2017-06-15 17:03:20  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 17:03:20  [ main:93 ] - [ INFO ]  设置股票偏好接口测试用例已执行，fail!错误原因：Internal service access error unreport
+2017-06-15 17:27:34  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=1xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 17:27:35  [ main:105 ] - [ INFO ]  偏好设置接口测试用例已执行，fail!错误原因：Internal service access error unreport
+2017-06-15 17:27:46  [ main:0 ] - [ INFO ]  发送请求：http://10.15.144.72/dzh/poolprefer/add?usertoken=xvPzBnNOtiPD8Jaems4PwGtc3*ivaH3ZwI*HAPvrVxg.1497520723&token=00000001:1583632690:2f5f30d19b7848a0e59ef05f7a71a6be3be2fe78&pool=多周期共振策略&prefer=大盘,高市盈,低波动
+2017-06-15 17:27:46  [ main:10 ] - [ INFO ]  偏好设置接口接口测试用例已执行，pass!
